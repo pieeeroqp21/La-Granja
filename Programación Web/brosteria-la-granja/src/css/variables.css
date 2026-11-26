@@ -1,0 +1,26 @@
+:root {
+  /* Paleta cromática corporativa mejorada */
+  --primary: #ff0033;
+  --primary-hover: #d90429;
+  --secondary: #1f2029;
+  --secondary-hover: #111217;
+  --accent: #ff6b00;
+  --gold: #ffb703;
+  
+  /* Fondos y acentos vivaces */
+  --bg-body: #f7f9fc;
+  --bg-card: #ffffff;
+  --text-main: #1e2022;
+  --text-muted: #656d78;
+  --border-color: #e6ecf2;
+  
+  /* Bordes y Sombras con resplandor (Glow) */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-promo: 0 12px 28px rgba(255, 107, 0, 0.28);
+  --shadow-hover: 0 16px 35px rgba(255, 0, 51, 0.22);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

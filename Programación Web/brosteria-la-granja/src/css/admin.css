@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f9;
+  color: #333;
+  padding-bottom: 3rem;
+}
+
+header {
+  background: #d90429;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h2 { margin: 0; font-size: 1.4rem; }
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  background: #2b2d42;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+header a:hover { background: #111; }
+
+.layout {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bloque-crud {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid #e9ecef;
+}
+
+.bloque-crud h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.grid-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-dos { grid-template-columns: 1fr; }
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  margin: 12px 0 4px;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+button.btn-primary {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+button.btn-primary:hover { opacity: 0.92; }
+
+
+/* ==========================================
+   ADAPTABILIDAD RESPONSIVA PARA ADMIN
+   ========================================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  header h2 {
+    font-size: 1.15rem;
+  }
+
+  .layout {
+    padding: 0 0.8rem;
+    margin: 1.2rem auto;
+  }
+
+  .bloque-crud {
+    padding: 1.2rem;
+  }
+
+  .grid-dos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - Brostería La Granja</title>
+  <link rel="stylesheet" href="./src/css/admin.css" />
+</head>
+<body>
+
+  <header>
+    <h2>⚙ Brostería La Granja - Administración</h2>
+    <a href="index.html">← Ver Carta Clientes</a>
+  </header>
+
+  <div class="layout">
+
+    <!-- 1. GESTIÓN DE PLATOS -->
+    <div class="bloque-crud">
+      <h3 style="color: #d90429;">🍗 1. Gestión de Platos (Carta)</h3>
+      <div class="grid-dos">
+        <form id="form-producto">
+          <label>Nombre del plato:</label>
+          <input type="text" id="nombre" placeholder="Ej: 1/4 Pollo Broaster" required />
+
+          <label>Categoría:</label>
+          <select id="categoria" required>
+            <option value="Broaster">Broaster</option>
+            <option value="Alitas">Alitas</option>
+            <option value="Salchipapas">Salchipapas</option>
+            <option value="Combos">Combos</option>
+            <option value="Bebidas">Bebidas</option>
+          </select>
+
+          <label>Precio (S/):</label>
+          <input type="number" step="0.50" id="precio" placeholder="18.00" required />
+
+          <label>URL de Imagen:</label>
+          <input type="text" id="imagen" placeholder="https://..." required />
+
+          <label>Descripción:</label>
+          <textarea id="descripcion" rows="2" placeholder="Papas fritas, ensalada y cremas..."></textarea>
+
+          <button type="submit" class="btn-primary">Guardar en la Carta</button>
+        </form>
+
+        <div>
+          <h4 style="margin-top: 0; color: #555;">Platos Registrados</h4>
+          <div id="lista-admin">
+            <p style="color: #777;">Cargando platos...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. GESTIÓN DE PROMOCIONES -->
+    <div class="bloque-crud">
+      <h3 style="color: #e65100;">🔥 2. Gestión de Promociones</h3>
+      <div class="grid-dos">
+        <form id="form-promo">
+          <label>Título de la promoción:</label>
+          <input type="text" id="promo-titulo" placeholder="Ej: Martes 2x1 en Alitas" required />
+
+          <label>Detalle / Beneficio:</label>
+          <textarea id="promo-detalle" rows="3" placeholder="Ej: Válido pidiendo por la web" required></textarea>
+
+          <button type="submit" class="btn-primary" style="background: #e65100;">Guardar Promoción</button>
+        </form>
+
+        <div>
+          <h4 style="margin-top: 0; color: #555;">Promociones Activas</h4>
+          <div id="lista-promos">
+            <p style="color: #777;">Cargando promociones...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. RESEÑAS -->
+    <div class="bloque-crud">
+      <h3 style="color: #2b2d42;">⭐ 3. Opiniones y Reseñas de Clientes</h3>
+      <div id="lista-resenas">
+        <p style="color: #777;">Cargando opiniones...</p>
+      </div>
+    </div>
+
+    <!-- 4. BANDEJA GENERAL DE VENTAS -->
+    <div class="bloque-crud">
+      <h3 style="color: #2b9348;">🧾 4. Bandeja General de Pedidos y Ventas</h3>
+      <div id="lista-pedidos-admin">
+        <p style="color: #777;">Cargando historial de pedidos...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="./src/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear Cuenta - Brostería La Granja</title>
+  <style>
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { background: #f4f6f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+    .card { background: #fff; padding: 2.2rem; border-radius: 12px; width: 100%; max-width: 380px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; color: #d90429; text-align: center; font-weight: 800; }
+    label { font-weight: 700; font-size: 0.9rem; display: block; margin-top: 1rem; color: #333; }
+    input { width: 100%; padding: 10px; margin-top: 4px; border: 1px solid #ced4da; border-radius: 6px; font-size: 0.95rem; }
+    button { width: 100%; padding: 12px; background: #d90429; color: #fff; border: none; border-radius: 6px; font-weight: bold; margin-top: 1.5rem; cursor: pointer; font-size: 1rem; }
+    .toggle { text-align: center; margin-top: 1.2rem; font-size: 0.9rem; }
+    .toggle a { color: #d90429; font-weight: bold; text-decoration: none; }
+    .volver { display: block; text-align: center; margin-top: 15px; color: #666; text-decoration: none; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Crear Cuenta</h2>
+    
+    <form id="form-registro">
+      <div>
+        <label>Nombre Completo:</label>
+        <input type="text" id="reg-nombre" placeholder="Ej: Carlos Rojas" required />
+      </div>
+
+      <div>
+        <label>Correo Electrónico:</label>
+        <input type="email" id="reg-email" placeholder="usuario@correo.com" required />
+      </div>
+
+      <div>
+        <label>Contraseña (Mínimo 6 caracteres):</label>
+        <input type="password" id="reg-password" placeholder="••••••••" required />
+      </div>
+
+      <button type="submit" id="btn-registro">Registrarme</button>
+    </form>
+
+    <div class="toggle">
+      <span>¿Ya tienes cuenta?</span>
+      <a href="login.html">Inicia sesión aquí</a>
+    </div>
+
+    <a href="index.html" class="volver">← Volver a la carta</a>
+  </div>
+
+  <script type="module" src="./src/js/auth.js"></script>
+</body>
+</html>

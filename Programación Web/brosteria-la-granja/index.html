@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brostería La Granja - Sabor y Crocancia</title>
+  <link rel="stylesheet" href="./src/css/variables.css" />
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body>
+
+  <!-- Barra Superior de Información -->
+  <div style="background: #1e1e24; color: #bbb; padding: 6px 1.5rem; font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+    <span>📍 Jr. Real 742, Huancayo | 🕒 Horario: 4:30 PM - 11:00 PM</span>
+    <span>📞 Delivery: (064) 234-567 | WhatsApp: +51 999 999 999</span>
+  </div>
+
+  <!-- Encabezado / Navegación -->
+  <header>
+    <h1>🍗 Brostería La Granja</h1>
+    <nav>
+      <a href="#menu">Carta</a>
+      <a href="#opiniones">Opiniones</a>
+
+      <!-- Gestión de Sesión -->
+      <a href="login.html" id="nav-login" class="btn-login">🔑 Iniciar Sesión</a>
+      <span id="nav-user" style="display: none; font-weight: bold;"></span>
+      <button id="nav-logout" style="display: none; background: transparent; border: 1px solid #fff; color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Salir</button>
+
+      <!-- Enlace exclusivo Administrador -->
+      <a href="admin.html" id="nav-admin" class="btn-admin">⚙ Panel Admin</a>
+
+      <button id="btn-ver-carrito" class="btn-cart">🛒 Carrito (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <!-- Banner Hero -->
+  <section class="hero">
+    <h2>El Broaster Más Crujiente de Huancayo</h2>
+    <p>Papas nativas doradas, deliciosas cremas tradicionales y la auténtica sazón de La Granja.</p>
+  </section>
+
+  <main>
+    <!-- Contenedor Banners de Promociones en Vivo -->
+    <div id="contenedor-promos" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem;"></div>
+
+    <!-- Catálogo de Platos -->
+    <h2 id="menu" class="seccion-titulo">Nuestra Carta</h2>
+    <div id="carta-clientes" class="grid-platos">
+      <p style="grid-column: 1/-1; text-align: center; color: #777;">Cargando menú...</p>
+    </div>
+
+    <!-- Botón Mostrar Más (Límite 10 iniciales) -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <button id="btn-cargar-mas" class="btn-secundario" style="display: none;">
+        👇 Ver más productos
+      </button>
+    </div>
+
+    <!-- Historial de Compras (Se activa tras iniciar sesión) -->
+    <section id="seccion-historial" class="box-seccion" style="display: none;">
+      <h3 style="margin-top: 0; color: var(--secondary, #2b2d42);">🧾 Mi Historial de Pedidos y Boletas</h3>
+      <div id="contenedor-historial">
+        <p style="color: #777;">Cargando historial de compras...</p>
+      </div>
+    </section>
+
+    <!-- Muro de Reseñas y Formulario Alineado -->
+    <section id="opiniones" class="box-seccion">
+      <h3 style="text-align: center; margin-top: 0; color: var(--secondary, #2b2d42);">⭐ Opiniones de Nuestros Clientes</h3>
+      <div class="grid-resenas">
+
+        <!-- Formulario Ordenado Verticalmente -->
+        <form id="form-resena" style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <label style="font-weight: bold; display: block; margin-bottom: 4px;">Tu Nombre:</label>
+            <input type="text" id="resena-nombre" required placeholder="Ej: Carlos Rojas" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px;" />
+          </div>
+
+          <div>
+            <label style="font-weight: bold; display: block; margin-bottom: 4px;">Calificación:</label>
+            <select id="resena-estrellas" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px;">
+              <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+              <option value="4">⭐⭐⭐⭐ (Muy Bueno)</option>
+              <option value="3">⭐⭐⭐ (Bueno)</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-weight: bold; display: block; margin-bottom: 4px;">Comentario:</label>
+            <textarea id="resena-comentario" required rows="3" placeholder="¿Qué tal estuvo el pollo y la atención?" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" style="background: var(--primary, #d90429); color: #fff; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer;">
+            Publicar Opinión
+          </button>
+        </form>
+
+        <!-- Contenedor Reseñas -->
+        <div id="contenedor-resenas" style="max-height: 320px; overflow-y: auto; padding-right: 5px;">
+          <p style="color: #777;">Cargando opiniones...</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Carrito Lateral Desplegable -->
+  <aside id="drawer-carrito">
+    <div class="drawer-header">
+      <h3 style="margin: 0;">Tu Pedido</h3>
+      <button id="btn-cerrar-carrito" style="background:transparent; border:none; color:#fff; font-size:1.4rem; cursor:pointer;">&times;</button>
+    </div>
+    <div id="cart-items" class="drawer-items">
+      <p style="text-align: center; color: #888;">Tu carrito está vacío.</p>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-total">
+        <span>Total:</span>
+        <span id="cart-total" style="color: var(--primary, #d90429); font-size: 1.2rem;">S/ 0.00</span>
+      </div>
+      <button id="btn-finalizar-pedido" class="btn-submit" style="background: var(--primary, #d90429); color: #fff; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer;">
+        Emitir Boleta y Pagar
+      </button>
+    </div>
+  </aside>
+
+  <!-- Pie de Página -->
+  <footer style="background: #1e1e24; color: #888; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.85rem;">
+    &copy; 2026 Brostería La Granja. Todos los derechos reservados.
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
